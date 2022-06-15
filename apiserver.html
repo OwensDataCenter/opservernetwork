@@ -1,0 +1,77 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPS Smart Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="color: rgb(0, 0, 0); background-color: rgb(38, 38, 38);">
+    <table style="width: 1000px; margin-left: auto; margin-right: auto; text-align: center;">
+        <tbody>
+            <tr>
+                <td style="width: 50px;">
+                    <div style="text-align: center;"><span style="font-family: Verdana, Geneva, sans-serif;"><span style="color: rgb(255, 255, 255);">&nbsp;</span><span style="font-size: 20px; text-shadow: rgb(136, 136, 136) 0px 0px 4px; color: rgb(255, 255, 255);">OPS ESP32 Smart Hub</span></span></div>
+                </td>
+                <td style="width: 50px;">
+                    <div style="text-align: center;"><span style="font-family: Verdana, Geneva, sans-serif; font-size: 16px; color: rgb(255, 255, 255);">My Discord: Owen Hurst OPS#8968</span></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table style="width: 1000px; margin-left: auto; margin-right: auto; text-align: center;">
+        <tbody>
+            <tr>
+                <td style="width: 50%;">
+                    <div style="text-align: center;"><span style="font-family: Verdana, Geneva, sans-serif; color: rgb(255, 255, 255);"><a href="http://opservernetwork.w3spaces.com/index.html">Home</a></span></div>
+                </td>
+                <td style="width: 50%;">
+                    <div style="text-align: center;"><span style="font-family: Verdana, Geneva, sans-serif; color: rgb(255, 255, 255);"><a href="http://opservernetwork.w3spaces.com/wiki.html">Wiki</a></span></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="text-align: center;"><span style="font-family: Verdana, Geneva, sans-serif; color: rgb(255, 255, 255);">&nbsp;</span></p>
+    <section>
+<section>
+<div><hr /></div>
+<div>
+<section>
+<h1><span style="color: #ffffff;"><a style="color: #ffffff;">OPS ESP32 API Server</a></span></h1>
+<p><span style="color: #ffffff;">Before you do anything, We recommend that you read <a style="color: #ffffff;" href="https://opservernetwork.w3spaces.com/gettingstarted.html" target="_blank">Getting Started</a></span></p>
+<p><span style="color: #ffffff;"><strong>Required:</strong></span></p>
+<ul>
+<li>
+<p><span style="color: #ffffff;">Web Browser</span></p>
+</li>
+<li>
+<p><span style="color: #ffffff;">ESP32</span></p>
+</li>
+</ul>
+<p><span style="color: #ffffff;">&nbsp;</span></p>
+<section>
+<h2><span style="color: #ffffff;">Part 1: Teardown Of the Server API</span></h2>
+<p><span style="color: #ffffff;">First we will look at the API IN Port of the server.The whole API Server URL will look like this</span></p>
+<p><span style="color: #ffffff;"><a style="color: #ffffff;" href="http://opservernetwork.ddns.net:81/?battery=100&amp;devid=10c7979d9309dc9ac1f478198f73d3e8&amp;rssi=-32&amp;bootcount=4&amp;var1=foo&amp;var2=C^t&amp;var3=bUmbleBEE">http://opservernetwork.ddns.net:81/?battery=100&amp;devid=10c7979d9309dc9ac1f478198f73d3e8&amp;rssi=-32&amp;bootcount=4&amp;var1=foo&amp;var2=C^t&amp;var3=bUmbleBEE</a></span></p>
+<p><span style="color: #ffffff;">Now, Put this URL in your browser, Then you should get this back "WRITE_STATUS_OK", This means your command was successful.</span></p>
+<p><span style="color: #ffffff;">'battery' Is the battery power as a percentage. (Set it to '0' if no battery connected)</span></p>
+<p><span style="color: #ffffff;">'devid' Is the Device ID, Whatever you put here will be required to retrieve the data back from the API Server, It is recommended that you use a MD5 hash. (Never leave this blank!)</span></p>
+<p><span style="color: #ffffff;">'rssi' Is the Wi-Fi RSSI in dBm.&nbsp;(Set it to '0' if not necessary)</span></p>
+<p><span style="color: #ffffff;">'bootcount' Is the Boot Count.&nbsp;(Set it to '0' if no deep sleep or battery)</span></p>
+<p><span style="color: #ffffff;">'var1'&amp;'var2'&amp;'var3' Can be blank, Put anything you'd like!</span></p>
+<div><hr /></div>
+<p><span style="color: #ffffff;">Now we will look at the API OUT Port of the server.</span></p>
+<p><span style="color: #ffffff;">Go to this URL</span></p>
+<p><span style="color: #ffffff;"><a style="color: #ffffff;" href="http://opservernetwork.ddns.net:82/10c7979d9309dc9ac1f478198f73d3e8.tmp">http://opservernetwork.ddns.net:82/10c7979d9309dc9ac1f478198f73d3e8.tmp</a></span></p>
+<p><span style="color: #ffffff;">You should then receive this '100,10c7979d9309dc9ac1f478198f73d3e8,-32,4,foo,C^t,bUmbleBEE'</span></p>
+<p><span style="color: #ffffff;">If you get this 'The specified Device ID was not found' then you entered an incorrect device ID or is missing the '.tmp' at the end of the URL.</span></p>
+<p><span style="color: #ffffff;">If you leave var1 or var2 or var3 they will have the value of 'undefined'.</span></p>
+<div><hr /></div>
+<section>
+<h2><span style="color: #ffffff;">If you need Data Logging contact me on Discord at&nbsp;Owen Hurst OPS#8968!</span></h2>
+</section>
+</section>
+</section>
+</div>
+</section>
+</body>
+</html>
